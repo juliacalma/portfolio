@@ -7,13 +7,14 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Navbar -->
   <header class="navbar">
     <a href="index.html" class="logo">Julia Calma</a>
     <nav aria-label="Primary">
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -21,28 +22,118 @@
 
   <main class="container">
     <section class="section">
-        <div class="project-grid">
-    <!-- App card -->
-    <article class="project-card">
-      <img src="assets/All-In-One_Logo.jpg" alt="App cover image" class="project-thumb" />
-      <div class="project-body">
-        <h2>All-In-One</h2>
-        <p class="project-tagline">A study companion with timers, notes, and smart reminders.</p>
+      <h1>Projects</h1>
+      <p class="project-tagline">Browse by category:</p>
+      <p>
+        <a class="btn outline" href="#software-dev">Software Development</a>
+        <a class="btn outline" href="#data-science">Data Science</a>
+      </p>
+    </section>
 
-        <div class="badges">
-          <span class="badge">Flutter</span>
-          <span class="badge">Firebase</span>
-          <span class="badge">Android</span>
-        </div>
+    <!-- Software Development -->
+    <section class="section" id="software-dev">
+      <h2>Software Development Projects</h2>
 
-        <div class="actions">
-          <a class="btn" href="app-studybuddy.html">Case Study</a>
-          <a class="btn outline" href="https://github.com/VibrainiumMan/All_In_One.git" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn outline" href="https://trello.com/invite/b/66a2b5e5e0e6c5fb573b003c/ATTIcd7539edcbe523a33a72d6fef8ad0a0e831687AF/2024s2w204aall-in-one" target="_blank" rel="noopener">Trello</a>
-        </div>
+      <div class="project-grid">
+        <!-- All-In-One (your existing card) -->
+        <article class="project-card">
+          <img src="assets/All-In-One_Logo.jpg" alt="All-In-One app logo" class="project-thumb" />
+          <div class="project-body">
+            <h2>All-In-One</h2>
+            <p class="project-tagline">A study companion with timers, notes, and smart reminders.</p>
+            <div class="badges">
+              <span class="badge">Flutter</span>
+              <span class="badge">Firebase</span>
+              <span class="badge">Android</span>
+            </div>
+            <div class="actions">
+              <a class="btn" href="app-studybuddy.html">Case Study</a>
+              <a class="btn outline" href="https://github.com/VibrainiumMan/All_In_One.git" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn outline" href="https://trello.com/invite/b/66a2b5e5e0e6c5fb573b003c/ATTIcd7539edcbe523a33a72d6fef8ad0a0e831687AF/2024s2w204aall-in-one" target="_blank" rel="noopener">Trello</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Juvenile Justice (web) -->
+        <article class="project-card">
+          <img src="assets/jj_frame_1.png" alt="Juvenile Justice website preview" class="project-thumb" />
+          <div class="project-body">
+            <h2>Juvenile Justice Website</h2>
+            <p class="project-tagline">Informational website explaining youth-justice processes and resources.</p>
+            <div class="badges">
+              <span class="badge">HTML/CSS</span>
+              <span class="badge">JavaScript</span>
+              <span class="badge">Accessibility</span>
+            </div>
+            <div class="actions">
+              <a class="btn" href="juvenile-justice-case-study.html">Case Study</a>
+              <a class="btn outline" href="#" target="_blank" rel="noopener">GitHub (optional)</a>
+            </div>
+          </div>
+        </article>
       </div>
-    </article>
-  </div>
+    </section>
+
+    <!-- Data Science -->
+    <section class="section" id="data-science">
+      <h2>Data Science Projects</h2>
+
+      <div class="project-grid">
+        <!-- Retail Forecasting -->
+        <article class="project-card">
+          <img src="assets/ds-forecasting.jpg" alt="Forecasting project placeholder" class="project-thumb" />
+          <div class="project-body">
+            <h2>Retail Turnover Forecasting (STAT603)</h2>
+            <p class="project-tagline">Time-series forecasting using R/fpp3; evaluation with accuracy metrics.</p>
+            <div class="badges">
+              <span class="badge">R</span>
+              <span class="badge">fpp3</span>
+              <span class="badge">Time Series</span>
+            </div>
+            <div class="actions">
+              <a class="btn outline" href="#" target="_blank" rel="noopener">Report (PDF)</a>
+              <a class="btn outline" href="#" target="_blank" rel="noopener">Repo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Clinical Referral NLP POC -->
+        <article class="project-card">
+          <img src="assets/ds-nlp.jpg" alt="NLP pipeline placeholder" class="project-thumb" />
+          <div class="project-body">
+            <h2>Clinical Referral NLP (POC)</h2>
+            <p class="project-tagline">ETL + text classification pipeline (structured / semi-structured / unstructured).</p>
+            <div class="badges">
+              <span class="badge">Python</span>
+              <span class="badge">LangChain</span>
+              <span class="badge">PostgreSQL</span>
+            </div>
+            <div class="actions">
+              <a class="btn outline" href="#" target="_blank" rel="noopener">Case Study</a>
+              <a class="btn outline" href="#" target="_blank" rel="noopener">Repo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- (Optional) WorkSafe Visualization -->
+        <article class="project-card">
+          <img src="assets/ds-viz.jpg" alt="Data visualization placeholder" class="project-thumb" />
+          <div class="project-body">
+            <h2>WorkSafe Visualization App (HCI)</h2>
+            <p class="project-tagline">Interactive dashboards & UX research supporting safety insights.</p>
+            <div class="badges">
+              <span class="badge">UX/HCI</span>
+              <span class="badge">Data Viz</span>
+              <span class="badge">Figma</span>
+            </div>
+            <div class="actions">
+              <a class="btn outline" href="#" target="_blank" rel="noopener">Case Study</a>
+              <a class="btn outline" href="#" target="_blank" rel="noopener">Prototype</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
   </main>
 
   <script src="script.js"></script>
