@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>StudyBuddy App — Case Study</title>
+  <title>All-In-One — Case Study</title>
   <link rel="stylesheet" href="styles.css" />
-  <!-- Optional: basic SEO for apps -->
-  <meta name="description" content="StudyBuddy: a cross-platform study app with timers, notes, and smart reminders. Built with Flutter + Firebase by Team XYZ.">
+  <meta name="description" content="All-In-One: a study companion app with timers and rich-text notes. Portfolio case study by Julia Calma.">
 </head>
 <body id="top">
-  <!-- Reuse your fixed navbar -->
+  <!-- Shared navbar -->
   <header class="navbar">
     <a href="index.html" class="logo">Julia Calma</a>
     <nav aria-label="Primary">
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -25,87 +24,87 @@
   <main class="container">
     <section class="section">
       <h1>All-In-One — Case Study</h1>
-      <p class="project-tagline">A focused study companion: Pomodoro timers, categorised notes, and weekly insights.</p>
+      <p class="project-tagline">
+        I built the <strong>study timer</strong> and the <strong>Add Note</strong> page (rich-text) in this team app.
+      </p>
+      <p class="badges">
+        <span class="badge">Grade: A-</span>
+        <span class="badge">Flutter</span>
+        <span class="badge">Dart</span>
+        <span class="badge">Firebase</span>
+        <span class="badge">Android</span>
+      </p>
 
-      <div class="actions" style="margin:10px 0 6px">
-        <a class="btn" href="https://youtu.be/_OhI_T9zC5A?si=9QqbYcjuFDQGdAq2" target="_blank" rel="noopener">Live / Store</a>
-        <a class="btn outline" href="https://github.com/yourorg/studybuddy" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn outline" href="projects.html">← Back to Projects</a>
+      <div class="actions">
+        <a class="btn" href="projects.html">← Back to Projects</a>
+        <a class="btn outline" href="https://youtu.be/_OhI_T9zC5A?si=9QqbYcjuFDQGdAq2" target="_blank" rel="noopener">App Demo</a>
+        <a class="btn outline" href="https://github.com/VibrainiumMan/All_In_One.git" target="_blank" rel="noopener">GitHub</a>
       </div>
 
-      <!-- Hero media: image or video -->
-       <div class="gallery">
-          <img src="assets/starting page.png" alt="StudyBuddy app screenshots"/>
-          <img src="assets/view_notes.png" alt="StudyBuddy app screenshots"/>
-          <img src="assets/on_going_timer.png" alt="StudyBuddy app screenshots"/>
-          <img src="assets/start_timer.png" alt="StudyBuddy app screenshots"/>
-          <img src="assets/timer_stopped.png" alt="StudyBuddy app screenshots"/>
+      <!-- Gallery (top) -->
+      <div class="gallery">
+        <img src="assets/starting page.png" alt="All-In-One app starting page" />
+        <img src="assets/view_notes.png" alt="All-In-One notes view" />
+        <img src="assets/on_going_timer.png" alt="All-In-One timer running" />
+        <img src="assets/start_timer.png" alt="All-In-One timer start" />
+        <img src="assets/timer_stopped.png" alt="All-In-One timer stopped" />
+      </div>
 
-       </div>
+      <!-- Case study details -->
       <div class="case-grid">
         <article class="case-card">
           <h2>Problem</h2>
-          <p>Students juggle tasks, deadlines, and distractions. Existing tools are fragmented and not tailored to study routines.</p>
+          <p>Students juggle tasks and distractions; existing tools are fragmented and don’t align with real study routines.</p>
         </article>
 
         <article class="case-card">
           <h2>Solution</h2>
-          <p>One app that combines Pomodoro timers, categorized notes with images, and weekly reports to guide habits.</p>
+          <p>One app combining Pomodoro-style timing, rich-text notes (with images), and weekly insights to guide habits and reduce distraction.</p>
         </article>
 
         <article class="case-card">
           <h2>My Role</h2>
           <ul>
-            <li>Business Analysis (requirements, user stories)</li>
-            <li>UX/UI wireframes & usability checks</li>
-            <li>Frontend dev (Flutter), Firebase integration</li>
+            <li>Implemented the <strong>study timer</strong>, including background detection and a <strong>30-second auto-pause</strong> with user alert when the app is left.</li>
+            <li>Built the <strong>Add Note</strong> page using Flutter Quill (Zefyr) with bold/italic/underline and folder/category selection; integrated save to the app datastore.</li>
           </ul>
         </article>
 
         <article class="case-card">
-          <h2>Stack</h2>
-          <p>Flutter, Firebase Auth/Firestore/Storage, GitHub Actions (CI), Figma</p>
+          <h2>Stack & Approach</h2>
+          <p>Flutter, Dart, Firebase (Auth/Firestore/Storage), GitHub Actions (CI), Figma. Agile sprints with Git-based version control.</p>
         </article>
 
         <article class="case-card">
-          <h2>Key Features</h2>
+          <h2>Features I Built</h2>
           <ul>
-            <li>Pomodoro timer with alerts (light/dark mode)</li>
-            <li>Categorised notes with images and search</li>
-            <li>Weekly study insights & reminders</li>
-          </ul>
-        </article>
-
-        <article class="case-card">
-          <h2>Outcomes</h2>
-          <ul>
-            <li>Beta: 120+ users, 78% weekly retention (4 weeks)</li>
-            <li>Avg. session: 18 mins; timer used 3×/day</li>
+            <li><strong>Study Timer:</strong> start/stop, detects when the app is backgrounded, auto-pauses after 30s, alerts user to refocus.</li>
+            <li><strong>Add Note:</strong> rich-text editor (bold/italic/underline), folder/category organisation, persistent storage.</li>
           </ul>
         </article>
 
         <article class="case-card">
           <h2>Challenges & Learnings</h2>
-          <p>Balancing feature scope vs. timeline; implementing offline-first notes; iterating based on user feedback.</p>
+          <p>Balancing scope vs. timeline; handling background app state reliably; designing a clean note-taking UX that stays simple.</p>
         </article>
-
-        <article class="case-card">
-          <h2>Privacy</h2>
-          <p>Only minimal analytics; no selling data; users can export/delete notes.</p>
-        </article>
-      </div>
-
-      <!-- Simple gallery -->
-      <div class="gallery">
-        <img src="assets/screen1.jpg" alt="Timer screen" />
-        <img src="assets/screen2.jpg" alt="Notes list" />
-        <img src="assets/screen3.jpg" alt="Weekly insights" />
       </div>
     </section>
   </main>
+    <!-- Lightbox (shared for all .gallery images on the page) -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close (Esc)">×</button>
+    <button class="lightbox-arrow prev" aria-label="Previous image">‹</button>
 
-  
+    <figure class="lightbox-figure">
+      <img class="lightbox-img" alt="" />
+      <figcaption class="lightbox-caption"></figcaption>
+    </figure>
 
-  
+    <button class="lightbox-arrow next" aria-label="Next image">›</button>
+    <div class="lightbox-counter" aria-live="polite"></div>
+  </div>
+  <script src="script.js" defer></script>
+
+
 </body>
 </html>
