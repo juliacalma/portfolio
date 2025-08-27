@@ -8,6 +8,20 @@
   <meta name="description" content="Data exploration and decision tree classification on the Maternal Health Risk dataset. Foundations of Data Science (COMP615) case study by Julia Calma.">
 </head>
 <body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <a href="index.html" class="logo">Julia Calma</a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+<main class="container">
+    <section class="section">
   <div class="wrap">
     <h1>Data Exploration & Classification — Case Study (COMP615)</h1>
     <p class="muted">
@@ -25,8 +39,8 @@
 
     <p>
       <a class="btn" href="projects.html">Back to Portfolio</a>
-      <a class="btn outline" href="assets/Data Exploration and Classification .pdf" target="_blank" rel="noopener">Report (PDF)</a>
-      <a class="btn outline" href="assets/Data Exploration and classification.ipynb" target="_blank" rel="noopener">Notebook (.ipynb)</a>
+      <a class="btn outline" href="assets/DataExplorationandClassification.pdf" target="_blank" rel="noopener">Report (PDF)</a>
+      <a class="btn outline" href="https://nbviewer.org/github/juliacalma/portfolio/assets/Data_Exploration_Classification.ipynb" target="_blank" rel="noopener">Notebook (.ipynb)</a>
     </p>
 
     <div class="grid mt-12">
@@ -68,45 +82,8 @@
       </div>
     </div>
 
-    <h2 class="mt-16">Screenshots</h2>
-    <div class="gallery">
-      <!-- Replace these with your actual images once exported -->
-      <img src="assets/comp615_overview.png" alt="EDA overview: distributions and class balance" />
-      <img src="assets/comp615_boxplots.png" alt="Boxplots by feature and risk level" />
-      <img src="assets/comp615_pairplot.png" alt="Pairwise relationships by risk level" />
-      <img src="assets/comp615_tree.png" alt="Final Decision Tree (depth 5)" />
-      <img src="assets/comp615_confusion.png" alt="Confusion matrix: low/mid/high risk" />
-      <img src="assets/comp615_importance.png" alt="Feature importance: BS, SystolicBP, etc." />
-    </div>
+ </section>
+</main>  
 
-    <h2 class="mt-16">Results (Decision Tree)</h2>
-    <ul>
-      <li><strong>Cross-validated accuracy:</strong> ~72% overall.</li>
-      <li><strong>Final tree:</strong> depth 5 (~33 nodes); reduced complexity vs. baseline.</li>
-      <li><strong>Top features:</strong> Blood Sugar (highest importance), then SystolicBP; BodyTemp, Age, HeartRate, DiastolicBP followed.</li>
-      <li><strong>Error patterns:</strong> model was strong on <em>high</em> and <em>low</em> risk, struggled more with <em>mid</em> risk separation.</li>
-    </ul>
-
-    <h2>Learnings</h2>
-    <p>
-      Careful outlier policy matters (removed HR anomalies only); class overlap drives mid-risk confusion; 
-      shallow trees (<code>max_depth</code>) and stricter splits (<code>min_samples_split</code>) improved generalisation; 
-      future work: class-aware metrics, resampling or thresholds to address mid-risk.
-    </p>
-  </div>
-
-  <!-- Lightbox (shared across pages; your script.js already handles this) -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox-close" aria-label="Close (Esc)">×</button>
-    <button class="lightbox-arrow prev" aria-label="Previous image">‹</button>
-    <figure class="lightbox-figure">
-      <img class="lightbox-img" alt="" />
-      <figcaption class="lightbox-caption"></figcaption>
-    </figure>
-    <button class="lightbox-arrow next" aria-label="Next image">›</button>
-    <div class="lightbox-counter" aria-live="polite"></div>
-  </div>
-
-  <script src="script.js" defer></script>
 </body>
 </html>
