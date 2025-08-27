@@ -2,109 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>All-In-One — Case Study</title>
   <link rel="stylesheet" href="styles.css" />
   <meta name="description" content="All-In-One: a study companion app with timers and rich-text notes. Portfolio case study by Julia Calma.">
 </head>
-<body id="top">
-  <!-- Shared navbar -->
-  <header class="navbar">
-    <a href="index.html" class="logo">Julia Calma</a>
-    <nav aria-label="Primary">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html" class="active">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<body>
+  <div class="wrap">
+    <h1>All-In-One — Case Study</h1>
+    <p class="muted">A study companion app with focus timers and rich-text notes. I built the <strong>study timer</strong> and the <strong>Add Note</strong> page.</p>
 
-  <main class="container">
-    <section class="section">
-      <h1>All-In-One — Case Study</h1>
-      <p class="project-tagline">
-        I built the <strong>study timer</strong> and the <strong>Add Note</strong> page (rich-text) in this team app.
-      </p>
-      <p class="badges">
-        <span class="badge">Grade: A-</span>
-        <span class="badge">Flutter</span>
-        <span class="badge">Dart</span>
-        <span class="badge">Firebase</span>
-        <span class="badge">Android</span>
-      </p>
+    <p>
+      <span class="tag">Flutter</span>
+      <span class="tag">Dart</span>
+      <span class="tag">Firebase</span>
+      <span class="tag">Android</span>
+      <span class="tag">Grade: A-</span>
+    </p>
 
-      <div class="actions">
-        <a class="btn" href="projects.html">← Back to Projects</a>
-        <a class="btn outline" href="https://youtu.be/_OhI_T9zC5A?si=9QqbYcjuFDQGdAq2" target="_blank" rel="noopener">App Demo</a>
-        <a class="btn outline" href="https://github.com/VibrainiumMan/All_In_One.git" target="_blank" rel="noopener">GitHub</a>
+    <p>
+      <a class="btn" href="index.html">Back to Portfolio</a>
+      <a class="btn outline" href="https://youtu.be/_OhI_T9zC5A?si=9QqbYcjuFDQGdAq2" target="_blank" rel="noopener">App Video</a>
+      <a class="btn outline" href="https://github.com/VibrainiumMan/All_In_One.git" target="_blank" rel="noopener">GitHub</a>
+    </p>
+
+    <div class="grid" style="margin-top:12px">
+      <div class="card">
+        <h2>Problem</h2>
+        <p>Students juggle tasks and distractions; existing tools are fragmented and don’t align with real study routines.</p>
       </div>
-
-      <!-- Gallery (top) -->
-      <div class="gallery">
-        <img src="assets/starting page.png" alt="All-In-One app starting page" />
-        <img src="assets/view_notes.png" alt="All-In-One notes view" />
-        <img src="assets/on_going_timer.png" alt="All-In-One timer running" />
-        <img src="assets/start_timer.png" alt="All-In-One timer start" />
-        <img src="assets/timer_stopped.png" alt="All-In-One timer stopped" />
+      <div class="card">
+        <h2>Solution</h2>
+        <p>One app that combines a focus timer, rich-text notes (with images), and weekly insights to guide habits and reduce distraction.</p>
       </div>
-
-      <!-- Case study details -->
-      <div class="case-grid">
-        <article class="case-card">
-          <h2>Problem</h2>
-          <p>Students juggle tasks and distractions; existing tools are fragmented and don’t align with real study routines.</p>
-        </article>
-
-        <article class="case-card">
-          <h2>Solution</h2>
-          <p>One app combining Pomodoro-style timing, rich-text notes (with images), and weekly insights to guide habits and reduce distraction.</p>
-        </article>
-
-        <article class="case-card">
-          <h2>My Role</h2>
-          <ul>
-            <li>Implemented the <strong>study timer</strong>, including background detection and a <strong>30-second auto-pause</strong> with user alert when the app is left.</li>
-            <li>Built the <strong>Add Note</strong> page using Flutter Quill (Zefyr) with bold/italic/underline and folder/category selection; integrated save to the app datastore.</li>
-          </ul>
-        </article>
-
-        <article class="case-card">
-          <h2>Stack & Approach</h2>
-          <p>Flutter, Dart, Firebase (Auth/Firestore/Storage), GitHub Actions (CI), Figma. Agile sprints with Git-based version control.</p>
-        </article>
-
-        <article class="case-card">
-          <h2>Features I Built</h2>
-          <ul>
-            <li><strong>Study Timer:</strong> start/stop, detects when the app is backgrounded, auto-pauses after 30s, alerts user to refocus.</li>
-            <li><strong>Add Note:</strong> rich-text editor (bold/italic/underline), folder/category organisation, persistent storage.</li>
-          </ul>
-        </article>
-
-        <article class="case-card">
-          <h2>Challenges & Learnings</h2>
-          <p>Balancing scope vs. timeline; handling background app state reliably; designing a clean note-taking UX that stays simple.</p>
-        </article>
+      <div class="card">
+        <h2>My Role</h2>
+        <ul>
+          <li>Implemented the <strong>study timer</strong> with background detection and a <strong>30s auto-pause</strong> + alert when the app is left.</li>
+          <li>Built the <strong>Add Note</strong> page using Flutter Quill (Zefyr) with bold/italic/underline and folder/category selection; wired persistence.</li>
+        </ul>
       </div>
-    </section>
-  </main>
-    <!-- Lightbox (shared for all .gallery images on the page) -->
+      <div class="card">
+        <h2>Tech & Approach</h2>
+        <p>Flutter, Dart, Firebase (Auth/Firestore/Storage); Agile sprints with Git/GitHub and team QA.</p>
+      </div>
+    </div>
+
+    <h2 style="margin-top:16px;">Screenshots</h2>
+    <div class="gallery">
+      <img src="assets/starting page.png" alt="All-In-One — starting page" />
+      <img src="assets/view_notes.png" alt="All-In-One — notes list view" />
+      <img src="assets/on_going_timer.png" alt="All-In-One — timer running" />
+      <img src="assets/start_timer.png" alt="All-In-One — start timer" />
+      <img src="assets/timer_stopped.png" alt="All-In-One — timer paused" />
+    </div>
+
+    <h2 style="margin-top:16px;">Outcomes</h2>
+    <ul>
+      <li>Clearer routines via integrated timer + notes.</li>
+      <li>Consistent UI for quick capture and review.</li>
+      <li>Delivered to spec; graded A-.</li>
+    </ul>
+
+    <h2>Learnings</h2>
+    <p>Balancing scope vs. timeline; handling background app state reliably; designing a simple notes UX that stays fast.</p>
+  </div>
+
+  <!-- Lightbox (uses your existing styles.css + script.js) -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <button class="lightbox-close" aria-label="Close (Esc)">×</button>
     <button class="lightbox-arrow prev" aria-label="Previous image">‹</button>
-
     <figure class="lightbox-figure">
       <img class="lightbox-img" alt="" />
       <figcaption class="lightbox-caption"></figcaption>
     </figure>
-
     <button class="lightbox-arrow next" aria-label="Next image">›</button>
     <div class="lightbox-counter" aria-live="polite"></div>
   </div>
+
   <script src="script.js" defer></script>
-
-
 </body>
 </html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Exploration & Classification — Case Study (COMP615)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Data exploration and decision tree classification on the Maternal Health Risk dataset. Foundations of Data Science (COMP615) case study by Julia Calma.">
+</head>
+<body>
+  <div class="wrap">
+    <h1>Data Exploration & Classification — Case Study (COMP615)</h1>
+    <p class="muted">
+      Exploratory data analysis and a Decision Tree classifier (10-fold CV) on the Maternal Health Risk dataset. 
+      I handled data exploration/cleaning, visualisations, model tuning, and evaluation in <strong>Python</strong> / <strong>Jupyter Notebook</strong>.
+    </p>
+
+    <p>
+      <span class="tag">Python</span>
+      <span class="tag">Jupyter Notebook</span>
+      <span class="tag">EDA</span>
+      <span class="tag">Decision Tree</span>
+      <span class="tag">10-fold CV</span>
+    </p>
+
+    <p>
+      <a class="btn" href="projects.html">Back to Portfolio</a>
+      <a class="btn outline" href="assets/Data Exploration and Classification .pdf" target="_blank" rel="noopener">Report (PDF)</a>
+      <a class="btn outline" href="assets/Data Exploration and classification.ipynb" target="_blank" rel="noopener">Notebook (.ipynb)</a>
+    </p>
+
+    <div class="grid mt-12">
+      <div class="card">
+        <h2>Problem</h2>
+        <p>
+          Predict maternal risk level (low / mid / high) from demographic and physiological features such as 
+          Age, SystolicBP, DiastolicBP, Blood Sugar (BS), Body Temperature, and Heart Rate.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Data & Tools</h2>
+        <p>
+          <strong>Dataset:</strong> Maternal Health Risk (1014 instances, 7 features).<br/>
+          <strong>Tools:</strong> Python (pandas, scikit-learn, matplotlib), Jupyter Notebook.<br/>
+          <strong>Cleaning:</strong> kept duplicates (to avoid major data loss); removed HR outliers only; no missing values detected.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Methods</h2>
+        <ul>
+          <li>EDA with summary stats, histograms, boxplots, pairwise plots by risk level.</li>
+          <li>Decision Tree classifier with <strong>10-fold cross-validation</strong>.</li>
+          <li>Hyperparameters explored one-at-a-time: <code>max_depth</code> and <code>min_samples_split</code>.</li>
+          <li>Evaluation via accuracy, precision, recall, F1, and confusion matrix.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>My Role</h2>
+        <ul>
+          <li>Implemented full EDA and visualisations.</li>
+          <li>Built and tuned the Decision Tree model.</li>
+          <li>Analysed feature importance and errors (confusion matrix).</li>
+          <li>Documented findings and recommendations.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="mt-16">Screenshots</h2>
+    <div class="gallery">
+      <!-- Replace these with your actual images once exported -->
+      <img src="assets/comp615_overview.png" alt="EDA overview: distributions and class balance" />
+      <img src="assets/comp615_boxplots.png" alt="Boxplots by feature and risk level" />
+      <img src="assets/comp615_pairplot.png" alt="Pairwise relationships by risk level" />
+      <img src="assets/comp615_tree.png" alt="Final Decision Tree (depth 5)" />
+      <img src="assets/comp615_confusion.png" alt="Confusion matrix: low/mid/high risk" />
+      <img src="assets/comp615_importance.png" alt="Feature importance: BS, SystolicBP, etc." />
+    </div>
+
+    <h2 class="mt-16">Results (Decision Tree)</h2>
+    <ul>
+      <li><strong>Cross-validated accuracy:</strong> ~72% overall.</li>
+      <li><strong>Final tree:</strong> depth 5 (~33 nodes); reduced complexity vs. baseline.</li>
+      <li><strong>Top features:</strong> Blood Sugar (highest importance), then SystolicBP; BodyTemp, Age, HeartRate, DiastolicBP followed.</li>
+      <li><strong>Error patterns:</strong> model was strong on <em>high</em> and <em>low</em> risk, struggled more with <em>mid</em> risk separation.</li>
+    </ul>
+
+    <h2>Learnings</h2>
+    <p>
+      Careful outlier policy matters (removed HR anomalies only); class overlap drives mid-risk confusion; 
+      shallow trees (<code>max_depth</code>) and stricter splits (<code>min_samples_split</code>) improved generalisation; 
+      future work: class-aware metrics, resampling or thresholds to address mid-risk.
+    </p>
+  </div>
+
+  <!-- Lightbox (shared across pages; your script.js already handles this) -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close (Esc)">×</button>
+    <button class="lightbox-arrow prev" aria-label="Previous image">‹</button>
+    <figure class="lightbox-figure">
+      <img class="lightbox-img" alt="" />
+      <figcaption class="lightbox-caption"></figcaption>
+    </figure>
+    <button class="lightbox-arrow next" aria-label="Next image">›</button>
+    <div class="lightbox-counter" aria-live="polite"></div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
