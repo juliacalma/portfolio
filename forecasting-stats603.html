@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forecasting & Time Series — Case Study (STAT603)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="ETS and ARIMA modelling in R with fpp3/tsibble on a monthly automobiles series. Case study by Julia Calma.">
+</head>
+<body id="top">
+  <!-- Fixed navbar -->
+  <header class="navbar">
+    <a href="index.html" class="logo">Julia Calma</a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="active" href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Content uses container/section to clear the fixed navbar -->
+  <main class="container">
+    <section class="section">
+      <div class="wrap">
+        <h1>Forecasting & Time Series — Case Study (STAT603)</h1>
+
+        <p class="muted">
+          I compared <strong>ETS</strong> (SES, Holt, damped Holt, Holt–Winters additive/multiplicative) and
+          <strong>ARIMA</strong> models on a monthly automobiles series using <strong>R</strong> with
+          <strong>fpp3/tsibble</strong>. I used Box–Cox and differencing to stabilise variance/mean, checked
+          ACF/PACF, and evaluated accuracy. 
+        </p>
+
+        <p>
+          <span class="tag">R</span>
+          <span class="tag">fpp3 / tsibble</span>
+          <span class="tag">ETS</span>
+          <span class="tag">ARIMA</span>
+          <span class="tag">Time Series CV</span>
+        </p>
+
+        <p class="actions">
+          <a class="btn" href="projects.html">← Back to Portfolio</a>
+          <a class="btn outline" href="assets/forecasting_ans.pdf" target="_blank" rel="noopener noreferrer">Report (PDF)</a>
+          <a class="btn outline" href="assets/forecaseting_quest.pdf" target="_blank" rel="noopener noreferrer">Brief (PDF)</a>
+        </p>
+
+        <div class="grid mt-12">
+          <div class="card">
+            <h2>Problem</h2>
+            <p>
+              Model and forecast a monthly series; compare ETS variants (SES, Holt, damped; HW additive vs
+              multiplicative), examine stationarity (ACF/PACF), build ARIMA/seasonal ARIMA, and discuss
+              accuracy and theory (AICc, PI growth, CV). 
+          </div>
+
+          <div class="card">
+            <h2>Data & Tools</h2>
+            <p>
+              <strong>Data:</strong> monthly <em>automobile</em> counts (tsibble).<br/>
+              <strong>R packages:</strong> <code>fpp3</code> (tsibble, feasts, fable), plus base plotting for quick checks.<br/>
+              <strong>Workflow:</strong> tsibble conversion → EDA → transform/difference → model → residual checks → forecast/accuracy.
+            </p>
+          </div>
+
+          <div class="card">
+            <h2>Methods</h2>
+            <ul>
+              <li><strong>ETS:</strong> SES, Holt’s linear, damped Holt; Holt–Winters additive vs multiplicative seasonality.</li>
+              <li><strong>Stationarity:</strong> ACF/PACF review; Box–Cox (Guerrero) for variance; differencing for mean.</li>
+              <li><strong>ARIMA:</strong> proposed seasonal ARIMA via ACF/PACF; compared with <code>ARIMA()</code> auto-selection; constant/drift check.</li>
+              <li><strong>Accuracy:</strong> in-sample measures and horizon-based error summaries; discussed <code>accuracy()</code> behaviour on seasonal models.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h2>My Role</h2>
+            <ul>
+              <li>Built all ETS and ARIMA models; set up Box–Cox/differencing decisions from diagnostics.</li>
+              <li>Ran seasonal vs non-seasonal comparisons; checked residuals and PI growth with horizon.</li>
+              <li>Wrote a clear, reproducible report (code + commentary) and summarised model trade-offs.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 class="mt-16">Results (highlights)</h2>
+        <ul>
+          <li><strong>Seasonality:</strong> Holt–Winters <em>multiplicative</em> captured changing seasonal amplitude better than additive on this series.</li>
+          <li><strong>Model selection:</strong> Auto-ARIMA selected a seasonal model with drift
+              (e.g., <code>ARIMA(1,0,1)(0,1,2)[12]</code> w/ drift) and achieved lower AIC/AICc than a manual alternative, with lower residual variance.</li>
+          <li><strong>Short vs long horizon:</strong> HW multiplicative was strong short-term; ARIMA with seasonal terms + drift provided the best overall fit by information criteria</li>
+          <li><strong>Accuracy notes:</strong> Be cautious with scale-dependent metrics and how <code>accuracy()</code> behaves on seasonal models/data availability.</li>
+        </ul>
+
+        <h2 class="mt-16">Screenshots</h2>
+        <div class="gallery">
+         
+          <img src="assets/forecast1.png" alt="automobile time series plot" /> 
+          <img src="assets/forecast2.png" alt="Automobile time series forecasts" /> 
+          <img src="assets/forecast3.png" alt="ACF/PACF plot" /> 
+          <img src="assets/forecast4.png" alt="First differenced series plot"/> 
+          <img src="assets/forecast5.png" alt="ACF of First differenced series"/> 
+          <img src="assets/forecast6.png" alt="PACF of First differenced series"/> 
+        </div>
+
+        <h2 class="mt-16">Learnings</h2>
+        <ul>
+          <li><strong>Transform first, then difference:</strong> Box–Cox can stabilise variance before differencing; re-check ACF/PACF after each step.</li>
+          <li><strong>Seasonality choice matters:</strong> multiplicative HW fits level-dependent seasonal swings better than additive.</li>
+          <li><strong>Auto vs manual:</strong> ACF/PACF give a good starting point, but auto-ARIMA plus residual tests and AICc is a strong baseline.</li>
+          <li><strong>Compare fairly:</strong> use the same train window; report multiple horizons; consider cross-validation when possible.</li>
+          <li><strong>Intervals grow with horizon:</strong> especially for non-stationary components; communicate uncertainty clearly.</li>
+          <li><strong>Reproducibility:</strong> keep code + narrative together; save plots for audit; note seeds and session info.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close (Esc)">×</button>
+    <button class="lightbox-arrow prev" aria-label="Previous image">‹</button>
+    <figure class="lightbox-figure">
+      <img class="lightbox-img" alt="" />
+      <figcaption class="lightbox-caption"></figcaption>
+    </figure>
+    <button class="lightbox-arrow next" aria-label="Next image">›</button>
+    <div class="lightbox-counter" aria-live="polite"></div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

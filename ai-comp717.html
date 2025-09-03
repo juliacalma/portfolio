@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Artificial Intelligence — Case Study (COMP717)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Game theory and AI: class experiments (V100, V10A, V10B), player classification, and a short report on applications to AI.">
+</head>
+<body id="top">
+  <!-- Fixed navbar -->
+  <header class="navbar">
+    <a href="index.html" class="logo">Julia Calma</a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="active" href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main class="container">
+    <section class="section">
+      <h1>Artificial Intelligence — Case Study (COMP717)</h1>
+
+      <p>
+        I explored how <strong>game theory</strong> shows up in AI by running/analysing three number-guessing games
+        (V100, V10A, V10B), then writing a short report on AI connections (multi-agent systems, self-play, GANs, and mechanism design).
+      </p>
+
+      <p>
+        <span class="tag">Game Theory</span>
+        <span class="tag">Mechanism Design</span>
+        <span class="tag">Nash Equilibrium</span>
+        <span class="tag">AI Applications</span>
+      </p>
+
+      <p class="actions">
+        <a class="btn" href="projects.html">← Back to Projects</a>
+        <a class="btn outline" href="assets/AI_report.pdf" target="_blank" rel="noopener noreferrer">Report (PDF)</a>
+        <a class="btn outline" href="assets/ai_table.pdf" target="_blank" rel="noopener noreferrer">Classification Table (PDF)</a>
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h2>Problem</h2>
+          <p>
+            Use simple games to study rational behaviour and equilibrium ideas, then explain how those ideas transfer to AI settings.
+            Games: <em>V100</em> (pick 1–100, target is 2/3 of average), <em>V10A</em> (same, with prior round info), and
+            <em>V10B</em> (1–10, winner closest to <em>1.5 ×</em> average of two players).
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Data & Tools</h2>
+          <p>
+            <strong>Data:</strong> class submissions (numbers + short reasons) across the three games; my compiled classification table (H/M/I).<br/>
+            <strong>Outputs:</strong> a concise AI report (PDF) and the classification table (PDF). 
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Methods</h2>
+          <ul>
+            <li>Defined a lightweight rubric for player types: <em>Highly Rational</em>, <em>Moderately Rational</em>, <em>Irrational/Random</em> (keywords like “2/3”, “average”, “1.5×”, vs “random”, “birthday”).</li>
+            <li>Tagged entries and noted shifts in reasoning across V100 → V10A → V10B.</li>
+            <li>Explained Nash equilibrium for each game and why actual results differ from the ideal.</li>
+            <li>Connected findings to AI: multi-agent reasoning, self-play, adversarial setups (GANs), and mechanism tweaks.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>My Role</h2>
+          <ul>
+            <li>Compiled and cleaned the raw responses.</li>
+            <li>Built the H/M/I classification table and checked consistency.</li>
+            <li>Wrote the AI report (2 pages) linking the games to AI practice.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Results (highlights)</h2>
+      <ul>
+        <li><strong>V100 (first exposure):</strong> many “lucky/favourite” picks; limited strategic depth → wins looked mostly random. </li>
+        <li><strong>V10A (with prior info):</strong> more “2/3 of last answer” reasoning → moderate shift toward rational adaptation. </li>
+        <li><strong>V10B (1.5× average, 1–10):</strong> most winners chose <strong>10</strong>; behaviour aligned with the mechanism and the equilibrium.</li>
+      </ul>
+<!--
+      <h2>Screenshots</h2>
+      <div class="gallery">
+        <!-- Drop a few PNGs into /assets and add them here to enable your lightbox -->
+        <!-- <img src="assets/ai_table_snip.png" alt="H/M/I classification table snippet" /> -->
+        <!-- <img src="assets/ai_v100_reasons.png" alt="Sample V100 reasons" /> -->
+        <!-- <img src="assets/ai_v10b_logic.png" alt="V10B 1.5× reasoning highlights" /> -->
+      </div> 
+    
+      <h2>Learnings</h2>
+      <ul>
+        <li><strong>Mechanisms shape behaviour:</strong> small rule changes (2/3 × avg vs 1.5 × avg) push players toward very different strategies.</li>
+        <li><strong>Depth of reasoning matters:</strong> level-k/common-knowledge effects explain gaps between theory (equilibrium) and what people do.</li>
+        <li><strong>Clear rubrics help:</strong> simple keyword-based tagging (H/M/I) makes classroom data easy to analyse at scale.</li>
+        <li><strong>AI link:</strong> the same ideas drive multi-agent AI, self-play, GANs, and auction design—agents adapt to the rules and to each other.</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Lightbox (shared site-wide) -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close (Esc)">×</button>
+    <button class="lightbox-arrow prev" aria-label="Previous image">‹</button>
+    <figure class="lightbox-figure">
+      <img class="lightbox-img" alt="" />
+      <figcaption class="lightbox-caption"></figcaption>
+    </figure>
+    <button class="lightbox-arrow next" aria-label="Next image">›</button>
+    <div class="lightbox-counter" aria-live="polite"></div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

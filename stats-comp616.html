@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Statistics for Data Science — Case Study (COMP616 / STAT604)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Non-parametric statistics in R: correlation, sign & runs tests, Wilcoxon, Kruskal–Wallis, and chi-squared. Case study by Julia Calma.">
+</head>
+<body id="top">
+  <!-- Fixed navbar -->
+  <header class="navbar">
+    <a href="index.html" class="logo">Julia Calma</a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="active" href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Content uses container/section to clear the fixed navbar -->
+  <main class="container">
+    <section class="section">
+      <div class="wrap">
+        <h1>Statistics for Data Science — Case Study (COMP616 / STATS604)</h1>
+
+        <p class="muted">
+          I used <strong>R</strong> (in <strong>RStudio</strong>) to answer a set of statistics questions using
+          <strong>non-parametric methods</strong>. I kept code and explanation together in an
+          <strong>R Markdown</strong> file and exported a clean PDF report.
+        </p>
+
+        <p>
+          <span class="tag">R</span>
+          <span class="tag">RStudio</span>
+          <span class="tag">R Markdown</span>
+          <span class="tag">Non-parametric Tests</span>
+        </p>
+
+        <p class="actions">
+          <a class="btn" href="projects.html">← Back to Portfolio</a>
+          <a class="btn outline" href="assets/COMP616_STAT604_2024_S1_Assignment_2_Questions.pdf" target="_blank" rel="noopener noreferrer">Report(PDF)</a>
+          <a class="btn outline" href="assets/Statistics_Data_Science_R.pdf" target="_blank" rel="noopener noreferrer">Brief(PDF)</a>
+        </p>
+
+        <div class="grid mt-12">
+          <div class="card">
+            <h2>Problem</h2>
+            <p>
+              Analyse small samples and categorical data without assuming normality. Answer questions about
+              <em>association</em>, <em>medians</em>, <em>group differences</em>, and <em>independence</em>
+              using rank-based and distribution-free tests (α = 0.05).
+            </p>
+          </div>
+
+          <div class="card">
+            <h2>Data & Tools</h2>
+            <p>
+              <strong>Tools:</strong> R, RStudio, R Markdown.<br/>
+              <strong>Data:</strong> small numeric samples and contingency tables (multiple tasks).<br/>
+              <strong>Outputs:</strong> tidy code chunks, inline results, and a knitted PDF report.
+            </p>
+          </div>
+
+          <div class="card">
+            <h2>Methods</h2>
+            <ul>
+              <li><strong>Rank correlation:</strong> Spearman’s ρ and Kendall’s τ to test monotonic association.</li>
+              <li><strong>Sign test:</strong> two-sided test for a median against a stated value.</li>
+              <li><strong>Runs test:</strong> randomness/independence in a sequence.</li>
+              <li><strong>Wilcoxon rank-sum:</strong> two-sample comparison (handles non-normal data and ties).</li>
+              <li><strong>Kruskal–Wallis:</strong> multi-group comparison of distributions/medians.</li>
+              <li><strong>Chi-squared independence:</strong> association between two categorical variables (checked expected counts; used appropriate corrections where needed).</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h2>My Role</h2>
+            <ul>
+              <li>Wrote all R code and set up each hypothesis test with clear H₀ / H₁ statements.</li>
+              <li>Validated assumptions (measurement scale, independence, expected counts) and handled ties.</li>
+              <li>Produced supporting visuals (boxplots, rank scatter, contingency summaries) and explained results.</li>
+              <li>Compiled a reproducible R Markdown report with code, outputs, and commentary.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 class="mt-16">Results (highlights)</h2>
+        <ul>
+          <li>Rank tests identified weak/no monotonic relationships where Pearson would be unsuitable.</li>
+          <li>Sign test flagged a median shift at α = 0.05 in one task; runs test supported randomness in another.</li>
+          <li>Wilcoxon showed no strong two-group difference in one comparison; Kruskal–Wallis detected at least one differing group across multiple groups.</li>
+          <li>Chi-squared found evidence of association in a 3×3 table; residuals pointed to which cells drove the effect.</li>
+        </ul>
+
+        <h2 class="mt-16">Learnings</h2>
+        <ul>
+        <li><strong>When to use non-parametrics:</strong> good fit for small n, skewed data, and ordinal scales; independence of observations still matters.</li>
+        <li><strong>Don’t stop at p-values:</strong> add an effect size (e.g., rank-biserial for Wilcoxon, η² for Kruskal–Wallis, Cramér’s V for χ²).</li>
+        <li><strong>After Kruskal–Wallis:</strong> use Dunn tests with Holm–Bonferroni to see which groups differ..</li>
+        <li><strong>Ties & exact vs. asymptotic p-values:</strong> ties are common; where possible, use exact methods or continuity corrections and state which was used.</li>
+        <li><strong>χ² checks:</strong> make sure expected counts aren’t too small; if they are, use Fisher’s exact.</li>
+        <li><strong>Use clear visuals:</strong> box/violin plots and ECDFs for numbers; mosaic/association plots for χ².</li>
+        <li><strong>Report robust summaries:</strong> median and IQR; add a bootstrap CI for the median if needed.</li>
+        <li><strong>Power & sample size:</strong> non-parametric tests often need larger n for the same power; effect sizes guide planning.</li>
+        <li><strong>State hypotheses upfront:</strong> write H₀/H₁ clearly, choose one- vs two-sided before testing, and keep α consistent.</li>
+        <li><strong>Reproducibility:</strong> keep all code + narrative in R Markdown, set a seed, include <code>sessionInfo()</code>, and knit to a shareable PDF.</li>
+        </ul>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
